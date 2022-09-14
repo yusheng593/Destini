@@ -9,47 +9,53 @@
 import Foundation
 
 struct StoryBrain {
-    let arrStory = [
+    let arrStories = [
+        //0
         Story(
-            title: "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: 'Need a ride, boy?'.",
-            choice1: "I'll hop in. Thanks for the help!",
+            title: "車子在沒有手機信號的偏僻地方的撞毀了。\n背著背包的你決定攔下一台車。 一輛路過的車子停在你旁邊。\n駕駛為你打開副駕車門，問：“需要搭車嗎？”。",
+            choice1: "是的，謝謝你",
             choice1Destination: 2,
-            choice2: "Better ask him if he's a murderer first.",
+            choice2: "最好先問問他要不要付錢",
             choice2Destination: 1
         ),
+        //1
         Story(
-            title: "He nods slowly, unfazed by the question.",
-            choice1: "At least he's honest. I'll climb in.",
+            title: "他慢慢地點點頭，對這個問題毫不在意。",
+            choice1: "至少他願意載我",
             choice1Destination: 2,
-            choice2: "Wait, I know how to change a tire.",
+            choice2: "算了，我還是用走的好了",
             choice2Destination: 3
         ),
+        //2
         Story(
-            title: "As you begin to drive, the stranger starts talking about his relationship with his mother. He gets angrier and angrier by the minute. He asks you to open the glovebox. Inside you find a bloody knife, two severed fingers, and a cassette tape of Elton John. He reaches for the glove box.",
-            choice1: "I love Elton John! Hand him the cassette tape.",
+            title: "關上車門，你開始聊如何釋放壓力。\n他的臉色變得越來越蒼白。\n他要你打開背包。\n背包裡面，你發現一把染血的刀、兩根斷掉的手指和一片紅髮艾德的 CD。\n他想把手伸進背包。",
+            choice1: "我愛紅髮艾德！把 CD 拿給他",
             choice1Destination: 5,
-            choice2: "It's him or me! You take the knife and stab him.",
+            choice2: "拼個你死我活！你拿起刀刺向他",
             choice2Destination: 4
         ),
+        //3
         Story(
-            title: "What? Such a cop out! Did you know traffic accidents are the second leading cause of accidental death for most adult age groups?",
-            choice1: "The",
+            title: "什麼？你在想什麼！你知道多偏僻嗎？\n你聽到他的質疑，下意識手伸進背包拿出刀子一陣猛砍\n對方血流如注暈倒在駕駛座上，車子滑下斜坡撞毀了。",
+            choice1: "下車繼續往前走",
             choice1Destination: 0,
-            choice2: "End",
+            choice2: "下車繼續往前走",
             choice2Destination: 0
         ),
+        //4
         Story(
-            title: "As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in.",
-            choice1: "The",
+            title: "對方血流如注暈倒在駕駛座上，踏著煞車的右腳鬆開了\n你只能趕緊抓著方向盤，但車子還是滑下了山坡，撞毀在偏僻的郊區。",
+            choice1: "下車繼續往前走",
             choice1Destination: 0,
-            choice2: "End",
+            choice2: "下車繼續往前走",
             choice2Destination: 0
         ),
+        //5
         Story(
-            title: "You bond with the murderer while crooning verses of 'Can you feel the love tonight'. He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: 'Try the pier.'",
-            choice1: "The",
+            title: "對方發抖著開車，紅髮艾德的歌聲越來越大聲。/n你感覺腦袋快要炸開了，無意識的手伸進背包拿出刀子一陣猛砍\n對方血流如注暈倒在駕駛座上，車子打滑後撞毀在路旁。",
+            choice1: "下車繼續往前走",
             choice1Destination: 0,
-            choice2: "End",
+            choice2: "下車繼續往前走",
             choice2Destination: 0
         )
     ]
