@@ -25,26 +25,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func choiceBtnPressed(_ sender: UIButton) {
-        let stories = storyBrain.arrStories
-        switch sender.currentTitle {
-        case stories[0].choice1:
-            updateUI(Destination: 2)
-        case stories[0].choice2:
-            updateUI(Destination: 1)
-        case stories[1].choice1:
-            updateUI(Destination: 2)
-        case stories[1].choice2:
-            updateUI(Destination: 3)
-        case stories[2].choice1:
-            updateUI(Destination: 5)
-        case stories[2].choice1:
-            updateUI(Destination: 4)
-        case stories[3].choice1:
-            updateUI(Destination: 0)
-        default:
-            updateUI(Destination: 0)
-        }
-        
+        guard let userChoice = sender.currentTitle else { return }
+        let nextStory = storyBrain.nextStory(userChoice)
+        updateUI(Destination: nextStory)
     }
     
     func updateUI(Destination: Int) {

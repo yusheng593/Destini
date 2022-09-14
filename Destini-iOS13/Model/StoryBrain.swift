@@ -12,7 +12,7 @@ struct StoryBrain {
     let arrStories = [
         //0
         Story(
-            title: "車子在偏僻的郊外的撞毀了。\n背著背包的你決定攔下一台車。 一輛路過的車子停在你旁邊。\n駕駛為你打開副駕車門，問：“需要搭車嗎？”。",
+            title: "車子在偏僻的郊外的撞毀了。\n背著背包的你決定攔下一台車。 一輛路過的車子停在你旁邊。\n駕駛為你打開副駕車門，問你需要搭車嗎？",
             choice1: "是的，謝謝你",
             choice1Destination: 2,
             choice2: "最好先問問他要不要付錢",
@@ -36,7 +36,7 @@ struct StoryBrain {
         ),
         //3
         Story(
-            title: "你白癡嗎！你知道多偏僻嗎？\n你聽到他的嘲笑，下意識手伸進背包拿出刀子一陣猛砍\n對方血流如注暈倒在駕駛座上，車子滑下斜坡撞毀了。",
+            title: "你白癡嗎！你知道這裡有多偏僻嗎？\n你聽到他的嘲笑，下意識手伸進背包拿出刀子一陣猛砍\n對方血流如注暈倒在駕駛座上，車子滑下斜坡撞毀了。",
             choice1: "下車繼續往前走",
             choice1Destination: 0,
             choice2: "下車繼續往前走",
@@ -60,7 +60,26 @@ struct StoryBrain {
         )
     ]
     
-    func nextStory() {
+    func nextStory(_ userChoice: String) -> Int {
+        let stories = arrStories
+        switch userChoice {
+        case stories[0].choice1:
+            return 2
+        case stories[0].choice2:
+            return 1
+        case stories[1].choice1:
+            return 2
+        case stories[1].choice2:
+            return 3
+        case stories[2].choice1:
+            return 5
+        case stories[2].choice1:
+            return 4
+        case stories[3].choice1:
+            return 0
+        default:
+            return 0
+        }
         
     }
 }
