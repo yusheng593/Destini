@@ -9,6 +9,7 @@
 import Foundation
 
 struct StoryBrain {
+    
     let arrStories = [
         //0
         Story(
@@ -60,26 +61,26 @@ struct StoryBrain {
         )
     ]
     
-    func nextStory(_ userChoice: String) -> Int {
-        let stories = arrStories
-        switch userChoice {
-        case stories[0].choice1:
-            return 2
-        case stories[0].choice2:
-            return 1
-        case stories[1].choice1:
-            return 2
-        case stories[1].choice2:
-            return 3
-        case stories[2].choice1:
-            return 5
-        case stories[2].choice1:
-            return 4
-        case stories[3].choice1:
-            return 0
-        default:
-            return 0
+    var storyNumber = 0
+    
+    func getStoryTitle() -> String {
+        return arrStories[storyNumber].title
+    }
+    
+    func getChoice1() -> String {
+        return arrStories[storyNumber].choice1
+    }
+    
+    func getChoice2() -> String {
+        return arrStories[storyNumber].choice2
+    }
+    
+    mutating func nextStory(_ userChoice: String) {
+        let current = arrStories[storyNumber]
+        if userChoice == current.choice1 {
+            storyNumber = current.choice1Destination
+        } else if userChoice == current.choice2 {
+            storyNumber = current.choice2Destination
         }
-        
     }
 }

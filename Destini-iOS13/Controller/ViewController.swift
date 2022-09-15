@@ -9,33 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var storyLabel: UILabel!
     @IBOutlet weak var choice1Button: UIButton!
     @IBOutlet weak var choice2Button: UIButton!
     
-    let storyBrain = StoryBrain()
+    var storyBrain = StoryBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        storyLabel.text = storyBrain.arrStories[0].title
-        choice1Button.setTitle(storyBrain.arrStories[0].choice1, for: .normal)
-        choice2Button.setTitle(storyBrain.arrStories[0].choice2, for: .normal)
-
+        updateUI()
+        
     }
     
     @IBAction func choiceBtnPressed(_ sender: UIButton) {
+        //change story number
         guard let userChoice = sender.currentTitle else { return }
-        let nextStory = storyBrain.nextStory(userChoice)
-        updateUI(Destination: nextStory)
+        storyBrain.nextStory(userChoice)
+        
+        updateUI()
     }
     
-    func updateUI(Destination: Int) {
-        storyLabel.text = storyBrain.arrStories[Destination].title
-        choice1Button.setTitle(storyBrain.arrStories[Destination].choice1, for: .normal)
-        choice2Button.setTitle(storyBrain.arrStories[Destination].choice2, for: .normal)
+    func updateUI() {
+        storyLabel.text = storyBrain.getStoryTitle()
+        choice1Button.setTitle(storyBrain.getChoice1(), for: .normal)
+        choice2Button.setTitle(storyBrain.getChoice2(), for: .normal)
     }
-
-
+    
+    
 }
 
