@@ -1,2 +1,2 @@
 #  Destini
-Infinite Loop Story Quiz
+Infinite Loop Story Quiz.
